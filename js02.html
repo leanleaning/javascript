@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js leaning</title>
+    <script>
+        var arr=[-24,25,-26,-27,-28];
+        len=arr.length;
+        sum=0;
+        var max=0;
+        for(var i=0;i<len;i++){
+            sum=arr[i]+sum;
+        }
+        document.write("数组的和为  "+sum);
+        for (var i=0;i<len;i++){
+            if (arr[i]>max){
+                max=arr[i];
+            }
+            else{
+                max=max;
+            }
+        }
+        document.write('<br>');
+        document.write('最大值为  '+max);
+    </script>
+</head>
+<body>
+    <h1>
+        一纬数组
+    </h1>
+
+</body>
+</html>

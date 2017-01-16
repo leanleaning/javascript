@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js leaning</title>
+    <script>
+        function jiujiu(){
+            document.write('<table border="2">');
+            for(var i=1;i<=9;i++){//表示行数的循环
+                document.write("<tr>");
+                for (var j=1;j<=i;j++){//表示列数的循环
+                    document.write("<td>");
+                    document.write(i+'X'+j+'='+i*j);
+                    document.write('</td>');
+                }
+                document.write('</tr>');
+
+            }
+            document.write('</table>');
+        }
+        //jiujiu();
+        function print(num){
+            for (var i=1;i<=num;i++ ){
+                jiujiu();
+            }
+        }
+        print(3);
+        function any_chengfabiao(row){
+            document.write('<table border="2">');
+            for(var i=1;i<=row;i++){//表示行数的循环
+                document.write("<tr>");
+                for (var j=1;j<=i;j++){//表示列数的循环
+                    document.write("<td>");
+                    document.write(i+'X'+j+'='+i*j);
+                    document.write('</td>');
+                }
+                document.write('</tr>');
+
+            }
+            document.write('</table>');
+
+        }
+        any_chengfabiao(3);
+        any_chengfabiao(10);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
