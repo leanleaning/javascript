@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js learning</title>
+    <script>
+        function func(){
+            //alert(123);
+            //获取一个对象
+            var obj=document.getElementById('submit');
+            var value=obj.value;
+            //alert(value);
+            var obj1=document.getElementById('file');
+            var value1=obj1.value;
+            //alert(value1);
+            var filename=value1;
+            /*
+            var result=filename.lastIndexOf('.');
+            var houzui=filename.substr(result+1);
+            alert(houzui);
+            */
+            filename=filename.toLowerCase();
+            var result=filename.match('.jpg');
+            alert(result);
+            //if (result)
+
+        }
+    </script>
+</head>
+<body>
+<h1>用户上传文件的文件格式是否复合要求</h1>
+<input type="file" value="上传" id="file">
+<input type="submit" id="submit" value="提交" onclick="func()">
+<h1>可以通过doc树将元素标签转化为对象，标签里边的属性就是对象 的属性，可以直接引用</h1>
+<h1>.value 就可以获取页面上元素的值</h1>
+
+<h3>可以通过substr截取文件或者直接match正则匹配</h3>
+</body>
+</html>
