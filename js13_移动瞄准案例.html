@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js learning</title>
+    <style>
+        div{
+            border:1px solid yellow;
+            width: 800px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        function fn(e){
+            var x=e.clientX;
+            var y= e.clientY;
+            document.getElementById('div').innerHTML='坐标'+x+','+y;
+
+        }
+    </script>
+</head>
+<body>
+<h1>移动瞄准案例</h1>
+<div id="div" onmousemove="fn(event)">
+    坐标0，0
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js learning</title>
+    <script>
+
+        function fn() {
+            var obj=document.getElementById('button');
+            var value=obj.value;//value=点击 这两个字
+            obj.value='提交';
+            obj.style.backgroundColor='yellow';//修改css属性要有一个 .style
+            obj.style.fontSize='20px';//这边不能用font-size
+            alert(value);
+            var obj1=document.getElementsByTagName('a');
+            var href=obj1.href='http://www.baidu.com';
+
+            alert(href);
+
+        }
+    </script>
+</head>
+<body>
+<h2>对象的引用--定义一个对象</h2>
+<h3>var obj={name:'张三丰'，age：'103',function(){}，zuofan：function(){}}</h3>
+<input type="button" id="button" value="点击" onmouseover="fn()">
+<a href="">这是一个链接</a>
+</body>
+</html>

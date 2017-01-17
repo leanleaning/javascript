@@ -1,0 +1,37 @@
+<!DOCTYPE html >
+<html lang="en" onclick="star(event)">
+<head>
+    <meta charset="UTF-8">
+    <title>js learning</title>
+    <script>
+        function star(e) {
+            //创建一个星星
+            var imgobj = document.createElement('img');
+
+
+
+            //imgobj.alt = '这是一个图片';
+            imgobj.src="bg1.jpg";
+
+            //创建星星的随机大小
+            var wid=Math.floor(Math.random()*(210-10)+10);
+            imgobj.width=wid;
+            //创建星星的随即位置
+            var x=e.clientX;
+            var y=e.clientY;
+            imgobj.style.position="absolute";
+            imgobj.style.top=y+'px';
+            imgobj.style.left=x+'px';
+            document.body.appendChild(imgobj);
+            /*
+            如何点击删除点击的图片
+             */
+        }
+
+    </script>
+</head>
+<body>
+<h1>点出漫天的小星星</h1>
+
+</body>
+</html>

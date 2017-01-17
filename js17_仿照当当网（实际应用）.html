@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js learning</title>
+    <style>
+        div{
+            border: 1px solid crimson;
+            width: 600px;
+            height: 200px;
+        }
+        div ul{
+            list-style: none;
+            float: right;
+            margin-top: -3px;
+        }
+        ul li{
+            width: 20px;
+            height: 20px;
+            margin-right: 20px;
+            margin-top: 10px;
+           border: 1px solid crimson;
+            text-align: center;
+            line-height: 20px;
+        }
+    </style>
+    <script>
+        window.onload=init;
+        var dingshiqi;
+        function init(){
+            dingshiqi=window.setInterval('tupian()',1000);
+        }
+        var i=1;
+        function tupian(){
+            i++;
+            if(i>6){
+                i=1;
+            }
+            var img=document.getElementById('img');
+
+            img.src='./images/dd_scroll_'+i+'.jpg';
+
+        }
+        //鼠标放上停止图片自动切换
+        function stoptu(){
+            window.clearInterval(dingshiqi);
+        }
+        //鼠标离开又继续切换
+        function starttu(){
+            init();
+        }
+        function tingtu(n){
+            var img=document.getElementById('img');
+            m=n.innerHTML
+            img.src='./images/dd_scroll_'+m+'.jpg';
+            stoptu();
+        }
+    </script>
+</head>
+<body>
+<h1>图片的滚动</h1>
+<h1>鼠标放上图片停止</h1>
+<div>
+<img src="./images/dd_scroll_1.jpg" alt="" id="img" onmouseover="stoptu()" onmouseout="starttu()">
+<ul>
+    <li onmouseover="tingtu(this)" onmouseout="starttu()">1</li>
+    <li onmouseover="tingtu(this)" onmouseout="starttu()">2</li>
+    <li onmouseover="tingtu(this)" onmouseout="starttu()">3</li>
+    <li onmouseover="tingtu(this)" onmouseout="starttu()">4</li>
+    <li onmouseover="tingtu(this)" onmouseout="starttu()">5</li>
+    <li onmouseover="tingtu(this)" onmouseout="starttu()">6</li>
+</ul>
+</div>
+</body>
+
+</html>

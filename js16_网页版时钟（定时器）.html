@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js learning</title>
+    <style>
+        div{
+            width: 300px;
+            height: 100px;
+            margin:0 auto;
+            border:2px solid gray;
+            box-shadow: gray 2px 1px 1px;
+            text-align: center;
+            line-height: 100px;//文字居中 line-height;
+            color: darkgreen;
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        window.onload=init;
+        function init(){
+            func();
+            window.setInterval('func()',1000);
+        }
+        function func(){
+            time=new Date();
+            //alert(time);
+            document.getElementById('time').innerHTML=time.toLocaleString();
+
+        }
+    </script>
+</head>
+<body>
+<h1>网页版时钟 （定时器的应用）</h1>
+<h3>tolocalstring（）转化为本地时间，很好用</h3>
+<div id="time">
+时间
+</div>
+
+</body>
+</html>
