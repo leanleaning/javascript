@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js learning</title>
+    <script>
+        x=screen.availWidth;
+        y=screen.availHeight;
+        alert(x);
+        alert(y);
+        window.onload=init;
+        /*
+        * 是在页面完全载入后才进行后续，而如果没有页面加载完成标志，则html会顺序执行，很容易出错
+        * */
+        function init(){
+
+            window.setTimeout("location.replace('http://www.baidu.com')",5000);
+            window.setInterval('tiaozhuan()',1000);
+        }
+
+       function tiaozhuan(){
+
+           var obj=document.getElementById('time');
+           var time=obj.innerHTML;
+           obj.innerHTML=time-1;
+       }
+
+    </script>
+</head>
+<body>
+<h1>location 对象</h1>
+<h3>locaiton.href 返回一个完整的url 命名路径的时候不要用中文</h3>
+<h3>locaiton.href='http://'可以进行路径的跳转</h3>
+<div>
+    页面在<span id="time">5</span>秒后进行跳转
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js learning</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #d1{
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+            border:1px solid crimson;
+        }
+        ul{
+            list-style: none;
+            margin: 0 auto;
+            height: 50px;
+        }
+        ul li{
+            float: left;
+            border:1px solid gray;
+            width:98px;
+            heigth:30px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #div1,#div2,#div3,#div4,#div5{
+            display: none;
+        }
+        #div1{
+            display: block;
+
+        }
+
+    </style>
+    <script>
+        function showdiv(n,m){
+            for (var j=1;j<6;j++){
+                document.getElementById('div'+j).style.display='none';
+                document.getElementById('li'+j).style.borderBottom='1px solid gray';
+            }
+            var div=document.getElementById('div'+n);
+            div.style.display='block';
+            m.style.borderBottom='white';
+        }
+    </script>
+</head>
+<body>
+
+    <div id="d1">
+        <ul>
+            <li id="li1" onmouseover="showdiv(1,this)">国内新闻</li>
+            <li id="li2" onmouseover="showdiv(2,this)">国际新闻</li>
+            <li id="li3" onmouseover="showdiv(3,this)">娱乐新闻</li>
+            <li id="li4" onmouseover="showdiv(4,this)">战争新闻</li>
+            <li id="li5" onmouseover="showdiv(5,this)">科技新闻</li>
+        </ul>
+        <div id="div1"><p>国内新闻：<br>习大大发布新政则</p></div>
+        <div id="div2">国际新闻：<br>朴槿惠下台</div>
+        <div id="div3">娱乐新闻：<br>徐若瑄复出</div>
+        <div id="div4">战争新闻：<br>中东地区宗教战争</div>
+        <div id="div5">科技新闻：<br>小米发布新产品</div>
+    </div>
+
+
+
+</body>
+</html>

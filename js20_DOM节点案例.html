@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js learning</title>
+    <script>
+        function func(){
+            var obj=document.getElementById('div');
+            obj.childNodes[1].style.color='red';
+            obj.childNodes[1].nextSibling.nextSibling.style.fontSize='50px';
+        }
+    </script>
+</head>
+<body>
+<h1>DOM节点案例</h1>
+<div id="div">
+    <a href="">这是一个标签</a>
+    <p>这是一个段落</p>
+    <span>这是一个字符</span>
+</div>
+<input type="button" value="点击" onclick="func()">
+</body>
+</html>
