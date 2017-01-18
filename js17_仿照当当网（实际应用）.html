@@ -48,10 +48,18 @@
         //鼠标离开又继续切换
         function starttu(){
             init();
+
         }
         function tingtu(n){
+
             var img=document.getElementById('img');
-            m=n.innerHTML
+            m=n.innerHTML;
+            i=m;
+            for(var j=1;j<7;j++){
+                document.getElementById('li'+j).style.backgroundColor='white';
+            }
+            n.style.backgroundColor='orange';
+
             img.src='./images/dd_scroll_'+m+'.jpg';
             stoptu();
         }
@@ -63,12 +71,12 @@
 <div>
 <img src="./images/dd_scroll_1.jpg" alt="" id="img" onmouseover="stoptu()" onmouseout="starttu()">
 <ul>
-    <li onmouseover="tingtu(this)" onmouseout="starttu()">1</li>
-    <li onmouseover="tingtu(this)" onmouseout="starttu()">2</li>
-    <li onmouseover="tingtu(this)" onmouseout="starttu()">3</li>
-    <li onmouseover="tingtu(this)" onmouseout="starttu()">4</li>
-    <li onmouseover="tingtu(this)" onmouseout="starttu()">5</li>
-    <li onmouseover="tingtu(this)" onmouseout="starttu()">6</li>
+    <li id="li1" onmouseover="tingtu(this)" onmouseout="starttu()">1</li>
+    <li id="li2"onmouseover="tingtu(this)" onmouseout="starttu()">2</li>
+    <li id="li3"onmouseover="tingtu(this)" onmouseout="starttu()">3</li>
+    <li id="li4"onmouseover="tingtu(this)" onmouseout="starttu()">4</li>
+    <li id="li5"onmouseover="tingtu(this)" onmouseout="starttu()">5</li>
+    <li id="li6"onmouseover="tingtu(this)" onmouseout="starttu()">6</li>
 </ul>
 </div>
 </body>
