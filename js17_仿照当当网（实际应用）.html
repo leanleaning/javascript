@@ -28,17 +28,25 @@
         window.onload=init;
         var dingshiqi;
         function init(){
+            document.getElementById('li1').style.backgroundColor='orange';
             dingshiqi=window.setInterval('tupian()',1000);
         }
         var i=1;
         function tupian(){
+
             i++;
             if(i>6){
                 i=1;
             }
             var img=document.getElementById('img');
-
             img.src='./images/dd_scroll_'+i+'.jpg';
+            //先清楚颜色在添加颜色
+            for(var j=1;j<7;j++){
+                document.getElementById('li'+j).style.backgroundColor='white';
+            }
+            var yanse=document.getElementById('li'+i);
+            yanse.style.backgroundColor='orange';
+
 
         }
         //鼠标放上停止图片自动切换
