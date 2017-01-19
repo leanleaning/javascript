@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js learning</title>
+    <style>
+        body{
+            cursor:url('images/bg1_cur.cur'),pointer;//必须设置一个默认的，作为url不可用时的备用
+        }
+        #span1{
+            display: inline-block;
+            border:1px solid white;
+            width: 200px;
+            height: 30px;
+        }
+        #span2{
+            display: inline-block;
+            height: 30px;
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        //出现随即位置随即大小的星星
+        // 鼠标点则消失------鼠标点定位，获取定位处星星的信息
+        //游戏功能添加 开始游戏--暂停游戏(用alert，alert可以暂停页面的执行)--
+        //游戏结束
+        //游戏进度条
+        //window.onload=init;
+
+        var img;
+        var count=0;
+        var dingshiqi;
+        var jinxing;
+        var jinxing_count=1;
+        function startGame(){
+
+            init();
+        }
+        function stopGame(){
+            alert('游戏暂停');
+        }
+        function endGame(){
+
+            location.reload();
+
+        }
+        function gameOver(){
+            //alert(count);
+            if(count>20){
+                jinxing_count=jinxing_count-1;
+                alert('菜鸡，你死了！！你一共持续了'+jinxing_count+'秒');
+                window.clearInterval(dingshiqi);
+                endGame();
+            }
+
+        }
+        function jindutioa(){
+            document.getElementById('span1').style.borderColor='cyan';
+            document.getElementById('span2').style.width=10*count+'px';
+        }
+        function second(){
+            document.getElementById('second').innerHTML='游戏进行了'+jinxing_count++ +'秒';
+        }
+        function init(){
+            window.clearInterval(dingshiqi);
+            window.clearInterval(jinxing);
+            dingshiqi=window.setInterval('stars()',400);
+            jinxing=window.setInterval('second()',1000);
+
+        }
+        function stars(){
+            var img=document.createElement('img');
+            img.src='images/jianjian.jpeg';
+            var w=Math.floor(Math.random()*79+20);
+            img.width=w;
+
+            var x=Math.floor(Math.random()*1000+200);
+            var y=Math.floor(Math.random()*600+100);
+            img.style.position='absolute';
+            img.style.top=y+'px';
+            img.style.left=x+'px';
+            document.body.appendChild(img);
+            count++;
+            img.onclick=clear;
+            jindutioa();
+            gameOver();
+        }
+
+        function clear(){
+            this.parentNode.removeChild(this);
+            count--;
+            jindutioa();
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+<input type="button" value="开始游戏" onclick="startGame()">
+<input type="button" value="暂停游戏" onclick="stopGame()">
+<input type="button" value="结束游戏" onclick="endGame()">
+<span id="second"></span>
+<span id="span1"><span id="span2"></span></span>
+
+
+
+
+</body>
+</html>
