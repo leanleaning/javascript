@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq leanrning</title>
+    <script src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<input type="button" value="点击">
+<ul>
+    <li>a</li>
+    <li>b</li>
+    <li id="d2">c</li>
+    <li>d</li>
+    <li>e</li>
+</ul>
+<script>
+    $('input').click(function(){
+        //$('li:first').css({background: 'lightblue'});
+        //$('li:last').css({background:'pink'});
+        //$('li:even').css({background:'yellow'});//偶数
+        //$('li:odd').css({background:'blue'});//奇数
+        $('li:not(#d2)').css({background:'yellow'});//指定索引位置
+    });
+</script>
+
+</body>
+</html>

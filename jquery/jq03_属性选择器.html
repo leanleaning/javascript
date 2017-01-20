@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq learning</title>
+    <script src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<input type="button" value="点击">
+<ul>
+    <li>aa</li>
+    <li>bb</li>
+    <li>c</li>
+    <li>d</li>
+    <li>e</li>
+    <li>f</li>
+</ul>
+<script>
+    $('input').click(function (){
+      //$['img[src]'].css();//所有包含src属性的img标签
+      //$["img[src='ab']"].css();//所有src=ab的img标签
+        $('li:nth-child(2)').css({background:'red'});
+    });
+</script>
+</body>
+</html>

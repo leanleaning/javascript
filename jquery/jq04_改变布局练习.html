@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.3.min.js"></script>
+    <style>
+        .div1{
+            width: 500px;
+            height: 300px;
+            background-color: #9B2B0F;
+        }
+        .div2{
+            width: 500px;
+            height: 300px;
+            background-color: cyan;
+        }
+        .div3{
+            width: 500px;
+            height: 300px;
+            background-color: crimson;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+
+</div>
+
+<input id="d1" type="button" value="点击查看布局1">
+<input id="d2" type="button" value="点击查看布局2">
+<input id="d3" type="button" value="点击查看布局3">
+<script>
+    $('#d1').click(function(){
+        $('.div1').removeClass('div2');
+        $('.div1').removeClass('div3');
+        $('.div1').addClass('div1');
+    });
+    $('#d2').click(function(){
+        //$('.div1').removeClass('div1');
+        $('.div1').removeClass('div3');
+        $('.div1').addClass('div2');
+    });
+    $('#d3').click(function(){
+        //$('.div1').removeClass('div1');
+        $('.div1').removeClass('div2');
+        $('.div1').addClass('div3');
+    });
+</script>
+
+</body>
+</html>
